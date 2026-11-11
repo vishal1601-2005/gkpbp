@@ -50,7 +50,7 @@ Please report your hardware with any number you quote.
 ## Limitations
 - Binary codes only; flooding-schedule normalised min-sum (no layered/serial schedules, no sum-product)
 - OSD-CS order is a sweep over weight-1 and limited weight-2 patterns, as in `ldpc`'s `osd_cs`; no higher-order search
-- Windows and macOS builds are exercised only by the CI workflow, not by the author's local tests
+- CI passes on Linux, Windows and macOS (Python 3.10 and 3.12). On macOS, multi-threading needs libomp (for example brew install libomp); without it the build falls back to single-threaded.
 - The code parameters in `scripts/bench.py` are from the literature (Bravyi et al.); the tests verify n, k and the CSS condition, not the distance
 
 MIT licence.
