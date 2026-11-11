@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "pybind11>=2.11"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gkpbp"
+version = "0.1.0"
+description = "Fast min-sum BP + OSD decoder (C++17, OpenMP) with per-shot soft priors; BP stage bit-identical to the ldpc package"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Vishal Hiralal Thakur", email = "beingcosmic44@gmail.com" }]
+keywords = ["quantum error correction", "qLDPC", "BP+OSD", "decoder", "GKP"]
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+test = ["pytest", "ldpc>=2.3"]
+bench = ["ldpc>=2.3", "matplotlib"]
+
+[project.urls]
+Source = "https://github.com/vishal1601-2005/gkpbp"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
